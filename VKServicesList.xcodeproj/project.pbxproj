@@ -8,22 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		8F7F29C6288038C00047E512 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29C5288038C00047E512 /* AppDelegate.swift */; };
-		8F7F29C8288038C00047E512 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29C7288038C00047E512 /* SceneDelegate.swift */; };
-		8F7F29CA288038C00047E512 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29C9288038C00047E512 /* ViewController.swift */; };
-		8F7F29CD288038C00047E512 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7F29CB288038C00047E512 /* Main.storyboard */; };
 		8F7F29CF288038D50047E512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F7F29CE288038D50047E512 /* Assets.xcassets */; };
 		8F7F29D2288038D50047E512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7F29D0288038D50047E512 /* LaunchScreen.storyboard */; };
+		8F7F29E128803BA80047E512 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29E028803BA80047E512 /* ServicesViewController.swift */; };
+		8F7F29E428803BF80047E512 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29E328803BF80047E512 /* Constants.swift */; };
+		8F7F29E828803C600047E512 /* VKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29E728803C600047E512 /* VKService.swift */; };
+		8F7F29ED288043020047E512 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29EC288043020047E512 /* NetworkService.swift */; };
+		8F7F29F1288043AF0047E512 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29F0288043AF0047E512 /* NetworkServiceProtocol.swift */; };
+		8F7F29F4288047E00047E512 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29F3288047E00047E512 /* NetworkError.swift */; };
+		8F7F29FE288049DD0047E512 /* ServicesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F29FD288049DD0047E512 /* ServicesPresenter.swift */; };
+		8F7F2A0128804A430047E512 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F2A0028804A430047E512 /* ServiceLocator.swift */; };
+		8F7F2A0428804CDF0047E512 /* ServicesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F2A0328804CDF0047E512 /* ServicesPresenterProtocol.swift */; };
+		8F7F2A0728804E210047E512 /* ServicesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F2A0628804E210047E512 /* ServicesViewProtocol.swift */; };
+		8F7F2A0B288064E80047E512 /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F2A0A288064E80047E512 /* RequestResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8F7F29C2288038C00047E512 /* VKServicesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKServicesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7F29C5288038C00047E512 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8F7F29C7288038C00047E512 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8F7F29C9288038C00047E512 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8F7F29CC288038C00047E512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F7F29CE288038D50047E512 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F7F29D1288038D50047E512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F7F29D3288038D50047E512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F7F29E028803BA80047E512 /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		8F7F29E328803BF80047E512 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8F7F29E728803C600047E512 /* VKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKService.swift; sourceTree = "<group>"; };
+		8F7F29EC288043020047E512 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		8F7F29F0288043AF0047E512 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		8F7F29F3288047E00047E512 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8F7F29FD288049DD0047E512 /* ServicesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesPresenter.swift; sourceTree = "<group>"; };
+		8F7F2A0028804A430047E512 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		8F7F2A0328804CDF0047E512 /* ServicesPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesPresenterProtocol.swift; sourceTree = "<group>"; };
+		8F7F2A0628804E210047E512 /* ServicesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewProtocol.swift; sourceTree = "<group>"; };
+		8F7F2A0A288064E80047E512 /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,71 @@
 		8F7F29C4288038C00047E512 /* VKServicesList */ = {
 			isa = PBXGroup;
 			children = (
+				8F7F29EA288042E50047E512 /* Services */,
+				8F7F29DD28803B720047E512 /* Presentation */,
 				8F7F29C5288038C00047E512 /* AppDelegate.swift */,
-				8F7F29C7288038C00047E512 /* SceneDelegate.swift */,
-				8F7F29C9288038C00047E512 /* ViewController.swift */,
-				8F7F29CB288038C00047E512 /* Main.storyboard */,
 				8F7F29CE288038D50047E512 /* Assets.xcassets */,
 				8F7F29D0288038D50047E512 /* LaunchScreen.storyboard */,
 				8F7F29D3288038D50047E512 /* Info.plist */,
+				8F7F2A0028804A430047E512 /* ServiceLocator.swift */,
 			);
 			path = VKServicesList;
+			sourceTree = "<group>";
+		};
+		8F7F29DD28803B720047E512 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8F7F29E328803BF80047E512 /* Constants.swift */,
+				8F7F29E628803C420047E512 /* Model */,
+				8F7F29DF28803B860047E512 /* Presenters */,
+				8F7F29DE28803B7C0047E512 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8F7F29DE28803B7C0047E512 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F7F29E028803BA80047E512 /* ServicesViewController.swift */,
+				8F7F2A0628804E210047E512 /* ServicesViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F7F29DF28803B860047E512 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				8F7F29FD288049DD0047E512 /* ServicesPresenter.swift */,
+				8F7F2A0328804CDF0047E512 /* ServicesPresenterProtocol.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		8F7F29E628803C420047E512 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F7F29E728803C600047E512 /* VKService.swift */,
+				8F7F2A0A288064E80047E512 /* RequestResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F7F29EA288042E50047E512 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8F7F29EB288042EE0047E512 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8F7F29EB288042EE0047E512 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				8F7F29EC288043020047E512 /* NetworkService.swift */,
+				8F7F29F0288043AF0047E512 /* NetworkServiceProtocol.swift */,
+				8F7F29F3288047E00047E512 /* NetworkError.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +198,6 @@
 			files = (
 				8F7F29D2288038D50047E512 /* LaunchScreen.storyboard in Resources */,
 				8F7F29CF288038D50047E512 /* Assets.xcassets in Resources */,
-				8F7F29CD288038C00047E512 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +208,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F7F29CA288038C00047E512 /* ViewController.swift in Sources */,
+				8F7F2A0728804E210047E512 /* ServicesViewProtocol.swift in Sources */,
+				8F7F2A0128804A430047E512 /* ServiceLocator.swift in Sources */,
+				8F7F29ED288043020047E512 /* NetworkService.swift in Sources */,
+				8F7F29F4288047E00047E512 /* NetworkError.swift in Sources */,
+				8F7F29E828803C600047E512 /* VKService.swift in Sources */,
+				8F7F29F1288043AF0047E512 /* NetworkServiceProtocol.swift in Sources */,
+				8F7F2A0B288064E80047E512 /* RequestResult.swift in Sources */,
+				8F7F29E128803BA80047E512 /* ServicesViewController.swift in Sources */,
 				8F7F29C6288038C00047E512 /* AppDelegate.swift in Sources */,
-				8F7F29C8288038C00047E512 /* SceneDelegate.swift in Sources */,
+				8F7F29FE288049DD0047E512 /* ServicesPresenter.swift in Sources */,
+				8F7F2A0428804CDF0047E512 /* ServicesPresenterProtocol.swift in Sources */,
+				8F7F29E428803BF80047E512 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8F7F29CB288038C00047E512 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8F7F29CC288038C00047E512 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8F7F29D0288038D50047E512 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 72QBG8R768;
 				INFOPLIST_FILE = VKServicesList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 72QBG8R768;
 				INFOPLIST_FILE = VKServicesList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
