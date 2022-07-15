@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ServicesViewController: UIViewController {
 	
@@ -19,6 +20,8 @@ class ServicesViewController: UIViewController {
 		table.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 		return table
 	}()
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +30,19 @@ class ServicesViewController: UIViewController {
 		
 		servicesTable.delegate = self
 		servicesTable.dataSource = self
-		
+		setupNavigationBar()
 		view.addSubview(servicesTable)
 		setupTable()
-		
-        // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupNavigationBar() {
+        navigationItem.title = "Сервисы VK"
+        navigationController?.navigationBar.barTintColor = Constants.secondBackgroundColor
+        navigationController?.navigationBar.backgroundColor = Constants.secondBackgroundColor
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: Constants.textColor]
     }
 	
 	private func setupTable() {
@@ -39,10 +50,38 @@ class ServicesViewController: UIViewController {
 		servicesTable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 		servicesTable.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
 		servicesTable.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-		//stocksTable.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
-		//stocksTable.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
 	}
     
+    private func configurateCell(indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        guard let service = presenter?.getService(for: indexPath.row) else {
+            return cell
+        }
+        cell.textLabel?.text = service.name
+        
+        let processor = DownsamplingImageProcessor(size: CGSize(width: cell.frame.height, height: cell.frame.height))
+        cell.imageView?.kf.setImage(
+            with: URL(string: service.iconURL),
+            placeholder: UIImage(systemName: "person"),
+            options: [.processor(processor), .cacheOriginalImage]) { result in
+            switch result {
+                case .success(let value):
+                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                    cell.layoutSubviews()
+                case .failure(let error):
+                    print("Job failed: \(error.localizedDescription)")
+            }
+        }
+        cell.accessoryType = .disclosureIndicator
+        cell.backgroundColor = Constants.secondBackgroundColor
+        cell.textLabel?.textColor = Constants.textColor
+        cell.detailTextLabel?.textColor = Constants.textColor
+        cell.detailTextLabel?.lineBreakMode = .byWordWrapping
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.detailTextLabel?.text = service.description
+
+        return cell
+    }
 }
 
 extension ServicesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -52,37 +91,26 @@ extension ServicesViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard var cell = servicesTable.dequeueReusableCell(withIdentifier: "Cell") else {
+		guard let _ = servicesTable.dequeueReusableCell(withIdentifier: "Cell") else {
 			return UITableViewCell()
 		}
-		guard let service = presenter?.getService(for: indexPath.row) else {
-			return UITableViewCell()
-		}
-		cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
-		cell.textLabel?.text = service.name
-		cell.imageView?.image = UIImage(systemName: "person")
-		cell.accessoryType = .disclosureIndicator
-		cell.backgroundColor = Constants.secondBackgroundColor
-		cell.textLabel?.textColor = Constants.textColor
-		cell.detailTextLabel?.textColor = Constants.textColor
-		cell.detailTextLabel?.lineBreakMode = .byWordWrapping
-		cell.detailTextLabel?.numberOfLines = 0
-		cell.detailTextLabel?.text = service.description
-		
-		
-		return cell
+		return configurateCell(indexPath: indexPath)
 	}
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didTap(index: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension ServicesViewController: ServicesViewProtocol {
 	func success() {
 		DispatchQueue.main.async { [weak self] in
-			print("fff")
 			self?.servicesTable.reloadData()
 		}
 	}
 	
 	func failure(error: Error) {
-		print("aaaa")
+        print(error.localizedDescription)
 	}
 }

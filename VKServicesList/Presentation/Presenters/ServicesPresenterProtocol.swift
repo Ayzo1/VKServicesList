@@ -6,4 +6,5 @@ protocol ServicesPresenterProtocol {
 	
 	func getService(for index: Int) -> VKService?
 	func getServicesCount() -> Int
+    func didTap(index: Int)
 }

@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 final class ServicesPresenter: ServicesPresenterProtocol {
 		
@@ -24,6 +25,22 @@ final class ServicesPresenter: ServicesPresenterProtocol {
 	}
 	
 	// MARK: - StocksPresenterProtocol
+    
+    func didTap(index: Int) {
+        guard let service = vkServices?[index] else {
+            return
+        }
+        guard let url = URL(string: service.link) else {
+            return
+        }
+        let appUrl = URL(string: "\(url.host!.split(separator: ".")[0])://")!
+        
+        if UIApplication.shared.canOpenURL(appUrl) {
+            UIApplication.shared.open(appUrl)
+        } else {
+            UIApplication.shared.open(url)
+        }
+    }
 	
 	func getService(for index: Int) -> VKService? {
 		return vkServices?[index]
